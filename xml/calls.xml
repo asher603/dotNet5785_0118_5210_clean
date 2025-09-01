@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCall xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Call>
+    <Id>1000</Id>
+    <Description>A motorist has lost their key fob and requires guidance to resolve the issue.</Description>
+    <FullAddress>Allenby 65, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-10-31T23:15:55</Opening>
+    <Latitude>32.068097</Latitude>
+    <Longitude>34.771172</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2024-10-14T22:08:50</MaxTime>
+  </Call>
+  <Call>
+    <Id>1001</Id>
+    <Description>A car owner is locked out and needs assistance retrieving their spare key.</Description>
+    <FullAddress>Dizengoff 125, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-02-24T08:33:30</Opening>
+    <Latitude>32.08137</Latitude>
+    <Longitude>34.77358</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2024-07-09T16:32:43</MaxTime>
+  </Call>
+  <Call>
+    <Id>1002</Id>
+    <Description>A driver’s car battery has died, and they need help jumpstarting it quickly.</Description>
+    <FullAddress>Hanassi 34, Haifa, Israel</FullAddress>
+    <Opening>2022-07-11T16:07:05</Opening>
+    <Latitude>32.57382015</Latitude>
+    <Longitude>34.94987867254768</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2024-05-29T13:12:04</MaxTime>
+  </Call>
+  <Call>
+    <Id>1003</Id>
+    <Description>A vehicle has run out of coolant, and the driver needs help refilling it.</Description>
+    <FullAddress>Abba Hillel 22, Ramat Gan, Israel</FullAddress>
+    <Opening>2025-01-28T01:46:24</Opening>
+    <Latitude>32.0875528</Latitude>
+    <Longitude>34.8064134</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-08-23T16:36:38</MaxTime>
+  </Call>
+  <Call>
+    <Id>1004</Id>
+    <Description>A vehicle has run out of coolant, and the driver needs help refilling it.</Description>
+    <FullAddress>Ben Gurion 20, Herzliya, Israel</FullAddress>
+    <Opening>2023-10-15T09:05:51</Opening>
+    <Latitude>32.1633245</Latitude>
+    <Longitude>34.8423088242769</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-08-17T10:48:41</MaxTime>
+  </Call>
+  <Call>
+    <Id>1005</Id>
+    <Description>Someone's car washer fluid is empty, and they need help refilling it quickly.</Description>
+    <FullAddress>Tchernichovsky 25, Jerusalem, Israel</FullAddress>
+    <Opening>2023-09-08T22:41:42</Opening>
+    <Latitude>31.7674084</Latitude>
+    <Longitude>35.2062385</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-02T13:09:44</MaxTime>
+  </Call>
+  <Call>
+    <Id>1006</Id>
+    <Description>A driver is out of brake fluid and needs assistance from a volunteer nearby.</Description>
+    <FullAddress>HaDekel 15, Eilat, Israel</FullAddress>
+    <Opening>2022-08-26T20:10:41</Opening>
+    <Latitude>29.5653712</Latitude>
+    <Longitude>34.9482766</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-03T18:11:44</MaxTime>
+  </Call>
+  <Call>
+    <Id>1007</Id>
+    <Description>A driver needs guidance and help in installing a spare tire safely.</Description>
+    <FullAddress>HaBonim 15, Hadera, Israel</FullAddress>
+    <Opening>2025-04-02T00:01:53</Opening>
+    <Latitude>32.4270293</Latitude>
+    <Longitude>34.9533834</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-04T05:11:42</MaxTime>
+  </Call>
+  <Call>
+    <Id>1008</Id>
+    <Description>A volunteer is needed to assist in fixing a broken brake light on a car.</Description>
+    <FullAddress>Herzl 10, Ramat Gan, Israel</FullAddress>
+    <Opening>2024-12-01T07:07:41</Opening>
+    <Latitude>32.08107</Latitude>
+    <Longitude>34.8188628</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-01T17:49:53</MaxTime>
+  </Call>
+  <Call>
+    <Id>1009</Id>
+    <Description>A vehicle won’t start due to a drained battery, and assistance is required.</Description>
+    <FullAddress>Emek Refaim 33, Jerusalem, Israel</FullAddress>
+    <Opening>2024-10-14T22:38:30</Opening>
+    <Latitude>31.7637403</Latitude>
+    <Longitude>35.2199878</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-05T07:56:18</MaxTime>
+  </Call>
+  <Call>
+    <Id>1010</Id>
+    <Description>A stranded driver needs help changing a flat tire on their vehicle quickly.</Description>
+    <FullAddress>Arava 8, Beer Sheva, Israel</FullAddress>
+    <Opening>2024-10-15T04:08:53</Opening>
+    <Latitude>31.26802375</Latitude>
+    <Longitude>34.85221403251482</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-01T17:58:46</MaxTime>
+  </Call>
+  <Call>
+    <Id>1011</Id>
+    <Description>A driver needs a jumpstart to get their vehicle running after battery failure.</Description>
+    <FullAddress>Derech Hevron 30, Jerusalem, Israel</FullAddress>
+    <Opening>2023-05-25T19:43:37</Opening>
+    <Latitude>31.7596765</Latitude>
+    <Longitude>35.2238736</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-06T16:09:57</MaxTime>
+  </Call>
+  <Call>
+    <Id>1012</Id>
+    <Description>A volunteer is needed to assist in fixing a broken brake light on a car.</Description>
+    <FullAddress>Rothschild 15, Tel Aviv, Israel</FullAddress>
+    <Opening>2024-03-04T21:24:11</Opening>
+    <Latitude>32.0632619</Latitude>
+    <Longitude>34.7711996</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-01T06:29:44</MaxTime>
+  </Call>
+  <Call>
+    <Id>1013</Id>
+    <Description>A vehicle has run out of coolant, and the driver needs help refilling it.</Description>
+    <FullAddress>Tversky 7, Haifa, Israel</FullAddress>
+    <Opening>2025-05-23T16:27:33</Opening>
+    <Latitude>32.7732409</Latitude>
+    <Longitude>34.9908045</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-08-31T22:45:17</MaxTime>
+  </Call>
+  <Call>
+    <Id>1014</Id>
+    <Description>A car owner is locked out and needs assistance retrieving their spare key.</Description>
+    <FullAddress>Bograshov 44, Tel Aviv, Israel</FullAddress>
+    <Opening>2022-07-04T14:51:56</Opening>
+    <Latitude>32.0761504</Latitude>
+    <Longitude>34.7711342</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-03T00:53:22</MaxTime>
+  </Call>
+  <Call>
+    <Id>1015</Id>
+    <Description>A volunteer is needed to assist with replacing a spare tire for a motorist.</Description>
+    <FullAddress>Jabotinsky 36, Ramat Gan, Israel</FullAddress>
+    <Opening>2025-04-06T03:34:10</Opening>
+    <Latitude>32.0742151</Latitude>
+    <Longitude>34.8484311</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-08-30T09:22:32</MaxTime>
+  </Call>
+  <Call>
+    <Id>1016</Id>
+    <Description>Someone is stranded without car keys and needs support in their situation.</Description>
+    <FullAddress>Allenby 30, Tel Aviv, Israel</FullAddress>
+    <Opening>2024-04-30T03:43:34</Opening>
+    <Latitude>32.072739</Latitude>
+    <Longitude>34.768023</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-03T06:27:38</MaxTime>
+  </Call>
+  <Call>
+    <Id>1017</Id>
+    <Description>A vehicle’s dashboard lights have failed, and troubleshooting is needed.</Description>
+    <FullAddress>Tchernichovsky 10, Jerusalem, Israel</FullAddress>
+    <Opening>2024-12-30T03:45:01</Opening>
+    <Latitude>31.7686484</Latitude>
+    <Longitude>35.2075682</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-08-30T13:42:12</MaxTime>
+  </Call>
+  <Call>
+    <Id>1018</Id>
+    <Description>A car owner is locked out and needs assistance retrieving their spare key.</Description>
+    <FullAddress>Derech Hevron 10, Jerusalem, Israel</FullAddress>
+    <Opening>2023-03-20T23:08:45</Opening>
+    <Latitude>31.761521</Latitude>
+    <Longitude>35.2249463</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-08-31T11:27:57</MaxTime>
+  </Call>
+  <Call>
+    <Id>1019</Id>
+    <Description>A headlight has gone out, and a driver needs help replacing it safely.</Description>
+    <FullAddress>HaDekel 25, Eilat, Israel</FullAddress>
+    <Opening>2024-12-01T07:01:52</Opening>
+    <Latitude>29.5653712</Latitude>
+    <Longitude>34.9482766</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-03T09:09:09</MaxTime>
+  </Call>
+  <Call>
+    <Id>1020</Id>
+    <Description>A driver needs a jumpstart to get their vehicle running after battery failure.</Description>
+    <FullAddress>Derech Hevron 5, Jerusalem, Israel</FullAddress>
+    <Opening>2024-10-04T14:19:17</Opening>
+    <Latitude>31.7596765</Latitude>
+    <Longitude>35.2238736</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-05T05:37:22</MaxTime>
+  </Call>
+  <Call>
+    <Id>1021</Id>
+    <Description>Someone is stranded without car keys and needs support in their situation.</Description>
+    <FullAddress>Dizengoff 100, Tel Aviv, Israel</FullAddress>
+    <Opening>2022-11-01T20:47:02</Opening>
+    <Latitude>32.079249</Latitude>
+    <Longitude>34.774114</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-09T00:59:28</MaxTime>
+  </Call>
+  <Call>
+    <Id>1022</Id>
+    <Description>A driver needs a jumpstart to get their vehicle running after battery failure.</Description>
+    <FullAddress>HaBonim 25, Hadera, Israel</FullAddress>
+    <Opening>2023-02-14T16:00:02</Opening>
+    <Latitude>32.4270293</Latitude>
+    <Longitude>34.9533834</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-04T21:16:32</MaxTime>
+  </Call>
+  <Call>
+    <Id>1023</Id>
+    <Description>A stranded driver needs help changing a flat tire on their vehicle quickly.</Description>
+    <FullAddress>Rothschild 55, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-02-17T02:14:44</Opening>
+    <Latitude>32.0606592</Latitude>
+    <Longitude>34.8576864</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-08T16:11:34</MaxTime>
+  </Call>
+  <Call>
+    <Id>1024</Id>
+    <Description>A volunteer is needed to assist in fixing a broken brake light on a car.</Description>
+    <FullAddress>Dizengoff 150, Tel Aviv, Israel</FullAddress>
+    <Opening>2024-12-30T11:33:50</Opening>
+    <Latitude>32.083042</Latitude>
+    <Longitude>34.774177</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-06T06:27:11</MaxTime>
+  </Call>
+  <Call>
+    <Id>1025</Id>
+    <Description>A volunteer is needed to assist in fixing a broken brake light on a car.</Description>
+    <FullAddress>Tchernichovsky 35, Jerusalem, Israel</FullAddress>
+    <Opening>2023-02-24T03:38:02</Opening>
+    <Latitude>31.7657534</Latitude>
+    <Longitude>35.2062771</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-02T06:09:09</MaxTime>
+  </Call>
+  <Call>
+    <Id>1026</Id>
+    <Description>A car’s power steering fluid is low, and the driver is requesting help.</Description>
+    <FullAddress>Ben Gurion 12, Herzliya, Israel</FullAddress>
+    <Opening>2023-12-04T13:44:52</Opening>
+    <Latitude>32.16506795</Latitude>
+    <Longitude>34.842348555844154</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-06T00:34:12</MaxTime>
+  </Call>
+  <Call>
+    <Id>1027</Id>
+    <Description>A volunteer is needed to help a driver contact locksmith services quickly.</Description>
+    <FullAddress>HaBonim 35, Hadera, Israel</FullAddress>
+    <Opening>2024-03-24T08:17:20</Opening>
+    <Latitude>32.4270293</Latitude>
+    <Longitude>34.9533834</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-08-31T15:49:17</MaxTime>
+  </Call>
+  <Call>
+    <Id>1028</Id>
+    <Description>A volunteer is needed to assist with replacing a spare tire for a motorist.</Description>
+    <FullAddress>Herzel 12, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-06-08T02:10:11</Opening>
+    <Latitude>32.0623233</Latitude>
+    <Longitude>34.7699763</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-05T09:02:29</MaxTime>
+  </Call>
+  <Call>
+    <Id>1029</Id>
+    <Description>Someone's car washer fluid is empty, and they need help refilling it quickly.</Description>
+    <FullAddress>Rothschild 30, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-01-27T20:31:54</Opening>
+    <Latitude>32.062971399999995</Latitude>
+    <Longitude>34.77262264217134</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-01T07:09:41</MaxTime>
+  </Call>
+  <Call>
+    <Id>1030</Id>
+    <Description>Someone is stuck in a remote area with a flat tire needing urgent attention.</Description>
+    <FullAddress>Dizengoff 175, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-09-02T11:13:00</Opening>
+    <Latitude>32.085076</Latitude>
+    <Longitude>34.774289</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-09T10:09:51</MaxTime>
+  </Call>
+  <Call>
+    <Id>1031</Id>
+    <Description>A driver needs guidance and help in installing a spare tire safely.</Description>
+    <FullAddress>Tversky 15, Haifa, Israel</FullAddress>
+    <Opening>2023-03-30T00:53:22</Opening>
+    <Latitude>32.7732409</Latitude>
+    <Longitude>34.9908045</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-08T11:51:25</MaxTime>
+  </Call>
+  <Call>
+    <Id>1032</Id>
+    <Description>A volunteer is needed to assist with replacing a spare tire for a motorist.</Description>
+    <FullAddress>Bograshov 50, Tel Aviv, Israel</FullAddress>
+    <Opening>2025-06-20T10:58:14</Opening>
+    <Latitude>32.075915</Latitude>
+    <Longitude>34.771387</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-05T15:30:43</MaxTime>
+  </Call>
+  <Call>
+    <Id>1033</Id>
+    <Description>A car’s power steering fluid is low, and the driver is requesting help.</Description>
+    <FullAddress>Herzel 15, Haifa, Israel</FullAddress>
+    <Opening>2023-01-28T03:34:39</Opening>
+    <Latitude>32.57196635</Latitude>
+    <Longitude>34.95196492455229</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-03T13:07:50</MaxTime>
+  </Call>
+  <Call>
+    <Id>1034</Id>
+    <Description>A driver’s car battery has died, and they need help jumpstarting it quickly.</Description>
+    <FullAddress>Abba Hillel 40, Ramat Gan, Israel</FullAddress>
+    <Opening>2025-07-27T01:07:35</Opening>
+    <Latitude>32.0907362</Latitude>
+    <Longitude>34.8119048</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-09T07:41:15</MaxTime>
+  </Call>
+  <Call>
+    <Id>1035</Id>
+    <Description>Someone's car washer fluid is empty, and they need help refilling it quickly.</Description>
+    <FullAddress>Ben Gurion 30, Herzliya, Israel</FullAddress>
+    <Opening>2024-02-06T00:09:39</Opening>
+    <Latitude>32.1590057</Latitude>
+    <Longitude>34.842534</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-09T05:20:27</MaxTime>
+  </Call>
+  <Call>
+    <Id>1036</Id>
+    <Description>A stranded driver needs help changing a flat tire on their vehicle quickly.</Description>
+    <FullAddress>Tchernichovsky 40, Jerusalem, Israel</FullAddress>
+    <Opening>2023-08-14T18:17:13</Opening>
+    <Latitude>31.7656726</Latitude>
+    <Longitude>35.2059289</Longitude>
+    <CType>TireChange</CType>
+    <MaxTime>2025-09-07T18:35:39</MaxTime>
+  </Call>
+  <Call>
+    <Id>1037</Id>
+    <Description>A driver needs a jumpstart to get their vehicle running after battery failure.</Description>
+    <FullAddress>HaDekel 10, Eilat, Israel</FullAddress>
+    <Opening>2022-10-15T21:10:40</Opening>
+    <Latitude>29.5653712</Latitude>
+    <Longitude>34.9482766</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-09-05T18:28:17</MaxTime>
+  </Call>
+  <Call>
+    <Id>1038</Id>
+    <Description>A vehicle’s dashboard lights have failed, and troubleshooting is needed.</Description>
+    <FullAddress>HaBonim 40, Hadera, Israel</FullAddress>
+    <Opening>2025-02-25T11:21:36</Opening>
+    <Latitude>32.6371881</Latitude>
+    <Longitude>34.9327996</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-08-31T04:54:29</MaxTime>
+  </Call>
+  <Call>
+    <Id>1039</Id>
+    <Description>A driver is out of brake fluid and needs assistance from a volunteer nearby.</Description>
+    <FullAddress>Herzl 20, Ramat Gan, Israel</FullAddress>
+    <Opening>2024-08-24T23:41:26</Opening>
+    <Latitude>32.0809711</Latitude>
+    <Longitude>34.8185976</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-09T13:38:17</MaxTime>
+  </Call>
+  <Call>
+    <Id>1040</Id>
+    <Description>A motorist has lost their key fob and requires guidance to resolve the issue.</Description>
+    <FullAddress>Tchernichovsky 5, Jerusalem, Israel</FullAddress>
+    <Opening>2023-12-13T22:40:33</Opening>
+    <Latitude>31.7689108</Latitude>
+    <Longitude>35.208692</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-05T04:06:36</MaxTime>
+  </Call>
+  <Call>
+    <Id>1041</Id>
+    <Description>A volunteer is needed to assist in fixing a broken brake light on a car.</Description>
+    <FullAddress>Rothschild 45, Tel Aviv, Israel</FullAddress>
+    <Opening>2025-03-16T14:27:24</Opening>
+    <Latitude>32.0622106</Latitude>
+    <Longitude>34.8058007</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-03T02:47:47</MaxTime>
+  </Call>
+  <Call>
+    <Id>1042</Id>
+    <Description>A car’s power steering fluid is low, and the driver is requesting help.</Description>
+    <FullAddress>Dizengoff 220, Tel Aviv, Israel</FullAddress>
+    <Opening>2024-11-30T15:46:38</Opening>
+    <Latitude>32.088271</Latitude>
+    <Longitude>34.775488</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-08-30T06:00:03</MaxTime>
+  </Call>
+  <Call>
+    <Id>1043</Id>
+    <Description>A motorist has lost their key fob and requires guidance to resolve the issue.</Description>
+    <FullAddress>Rothschild 67, Tel Aviv, Israel</FullAddress>
+    <Opening>2022-07-11T17:34:30</Opening>
+    <Latitude>32.0656376</Latitude>
+    <Longitude>34.7766423</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-02T05:40:30</MaxTime>
+  </Call>
+  <Call>
+    <Id>1044</Id>
+    <Description>Someone is stranded without car keys and needs support in their situation.</Description>
+    <FullAddress>Tversky 18, Haifa, Israel</FullAddress>
+    <Opening>2024-03-08T14:02:01</Opening>
+    <Latitude>32.7732409</Latitude>
+    <Longitude>34.9908045</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-03T15:05:08</MaxTime>
+  </Call>
+  <Call>
+    <Id>1045</Id>
+    <Description>A car owner is locked out and needs assistance retrieving their spare key.</Description>
+    <FullAddress>Bograshov 60, Tel Aviv, Israel</FullAddress>
+    <Opening>2023-03-16T21:28:46</Opening>
+    <Latitude>32.075551</Latitude>
+    <Longitude>34.772081</Longitude>
+    <CType>LostKey</CType>
+    <MaxTime>2025-09-09T13:28:59</MaxTime>
+  </Call>
+  <Call>
+    <Id>1046</Id>
+    <Description>Someone is stranded on a cold morning with a dead battery needing a jumpstart.</Description>
+    <FullAddress>Hanassi 60, Haifa, Israel</FullAddress>
+    <Opening>2024-08-09T08:23:36</Opening>
+    <Latitude>32.4407923</Latitude>
+    <Longitude>34.9157156</Longitude>
+    <CType>JumpStart</CType>
+    <MaxTime>2025-08-31T01:41:37</MaxTime>
+  </Call>
+  <Call>
+    <Id>1047</Id>
+    <Description>A vehicle has run out of coolant, and the driver needs help refilling it.</Description>
+    <FullAddress>Abba Hillel 50, Ramat Gan, Israel</FullAddress>
+    <Opening>2022-12-22T07:50:21</Opening>
+    <Latitude>32.08910275</Latitude>
+    <Longitude>34.809028999999995</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-05T00:31:00</MaxTime>
+  </Call>
+  <Call>
+    <Id>1048</Id>
+    <Description>A vehicle’s dashboard lights have failed, and troubleshooting is needed.</Description>
+    <FullAddress>Ben Gurion 35, Herzliya, Israel</FullAddress>
+    <Opening>2024-05-05T05:38:36</Opening>
+    <Latitude>32.16116155</Latitude>
+    <Longitude>34.8429057907241</Longitude>
+    <CType>LightFix</CType>
+    <MaxTime>2025-09-05T15:11:49</MaxTime>
+  </Call>
+  <Call>
+    <Id>1049</Id>
+    <Description>A vehicle has run out of coolant, and the driver needs help refilling it.</Description>
+    <FullAddress>Tchernichovsky 50, Jerusalem, Israel</FullAddress>
+    <Opening>2025-02-17T18:30:02</Opening>
+    <Latitude>31.7645839</Latitude>
+    <Longitude>35.2045088</Longitude>
+    <CType>FluidRefill</CType>
+    <MaxTime>2025-09-06T13:48:16</MaxTime>
+  </Call>
+</ArrayOfCall>

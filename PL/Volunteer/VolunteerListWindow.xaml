@@ -1,0 +1,102 @@
+﻿<Window x:Class="PL.Volunteer.VolunteerListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Volunteer"
+        mc:Ignorable="d"
+        Title="VolunteerListWindow" 
+        Height="500" 
+        Width="1000"
+         Icon="{StaticResource WindowIcon}"
+        Style="{StaticResource BackGroundPic}"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <!--External Grid-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,46,0,0" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="301*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <!--Internal, Upper Grid-->
+        <Grid Grid.Row="0" Height="auto" Width="auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Activation Status Filter:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource ActivationStatusFilterOptionsCollectionKey}}" 
+                       SelectedValue="{Binding Path=SelectedActivationStatusFilter, Mode=TwoWay, Converter={StaticResource ConvertBoolToActivationStatusFilterEnumKey}}" 
+                       SelectionChanged="OnVolunteerSorterOrFilterChanged" 
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="0"/>
+
+            <Label Content="Call Type Filter:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="0" Grid.Column="2"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource CallTypeFilterOptionsCollectionKey}}" 
+                       SelectedValue="{Binding Path=SelectedCallTypeFilter, Mode=TwoWay, Converter={StaticResource ConvertCallTypeEnumToCallTypeFilterEnumKey}}" 
+                       SelectionChanged="OnVolunteerSorterOrFilterChanged" 
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="2"/>
+
+            <Label Content="Sort By:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="0" Grid.Column="4"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource VolunteerInListFieldsCollectionKey}}" 
+                       SelectedValue="{Binding Path=SelectedSortOption, Mode=TwoWay}" 
+                       SelectionChanged="OnVolunteerSorterOrFilterChanged"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="4"/>
+        </Grid>
+
+        
+        <!-- ListView with Volunteer details -->
+        <ListView Margin="5,5,5,5" Grid.Row="1" ItemsSource="{Binding VolunteerList}"  SelectedItem="{Binding SelectedVolunteer}" MouseDoubleClick="ListView_MouseDoubleClick"  Grid.RowSpan="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FullName}" Header="Full Name" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalCallsHandled}" Header="Total Calls Handled" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalCallsCancelled}" Header="Total Calls Cancelled" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalCallsExpired}" Header="Total Calls Expired" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CallInProgressId}" Header="Call In Progress Id" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CType}" Header="Call Type" Width="Auto"/>
+
+                    <!-- Column for Active (True/False) with a CheckBox, read-only -->
+                    <GridViewColumn Header="Active" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Active}" IsEnabled="False"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Column for Deletion button -->
+                    <GridViewColumn Header="Actions" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="DeleteVolunteerButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Add" Grid.Row="2" Click="btnAddNew_Click" HorizontalAlignment="Center" Height="50" Width="100"/>
+    </Grid>
+</Window>

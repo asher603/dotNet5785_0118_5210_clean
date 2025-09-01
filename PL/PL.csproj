@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+	<OutputPath>$(SolutionDir)\bin\</OutputPath>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\backgroundApp.png" />
+    <None Remove="Images\backgroundApp2.png" />
+    <None Remove="Images\backgroundApp3.jpg" />
+    <None Remove="Images\backgroundApp4.png" />
+    <None Remove="Images\backgroundApp5.png" />
+    <None Remove="Images\logoApp.png" />
+    <None Remove="Images\logoApp1.png" />
+    <None Remove="Images\logoApp2.png" />
+    <None Remove="Images\HelpOnRoadBarLogo.png" />
+    <None Remove="Images\HelpOnRoad.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+    <ProjectReference Include="..\DalXml\DalXml.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\backgroundApp.png" />
+    <Resource Include="Images\HelpOnRoadBarLogo.png" />
+    <Resource Include="Images\HelpOnRoad.png" />
+	  
+	  
+  </ItemGroup>
+
+</Project>

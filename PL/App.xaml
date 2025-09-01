@@ -1,0 +1,126 @@
+﻿<Application x:Class="PL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PL"
+             StartupUri="StartWindow.xaml">
+
+    <Application.Resources>
+        <local:CallStatusCollection x:Key="CallStatusCollectionKey"/>
+        <local:VolunteerCollection x:Key="VolunteerCollectionKey"/>
+        <local:ActivationStatusFilterOptionsCollection x:Key="ActivationStatusFilterOptionsCollectionKey"/>
+        <local:CallTypeFilterOptionsCollection x:Key="CallTypeFilterOptionsCollectionKey"/>
+        <local:VolunteerInListFieldsCollection x:Key="VolunteerInListFieldsCollectionKey"/>
+        <local:VolunteerRole x:Key="VRolKey"/>
+        <local:VolunteerTypeDis x:Key="TDisKey"/>
+        <local:CallFilterByStatus x:Key="CallFilterByStatusKey"/>
+        <local:CallInListCollection x:Key="CallInListKey"/>
+        <local:CallTypeFilterOptionsWithoutNoCallTypeOptionCollection x:Key="CallTypeFilterOptionsWithoutNoCallTypeOptionCollectionKey"/>
+        <local:OpenCallInListSortOptionsKey x:Key="OpenCallInListSortOptionsKey"/>
+        <local:ClosedCallInListSortOptionsKey x:Key="ClosedCallInListSortOptionsKey"/>
+        <local:CallTypeCollection x:Key ="CallTypeCollectionKey"/>
+
+        <!-- Converters -->
+        <local:ConvertBoolToActivationStatusFilterEnum x:Key="ConvertBoolToActivationStatusFilterEnumKey"/>
+        <local:ConvertCallTypeEnumToCallTypeFilterEnum x:Key="ConvertCallTypeEnumToCallTypeFilterEnumKey"/>
+        <local:ConvertCallTypeEnumToCallTypeFilterOptionsWithoutNoCallTypeOptionEnum x:Key="ConvertCallTypeEnumToCallTypeFilterOptionsWithoutNoCallTypeOptionEnumKey"/>
+        <local:ConvertUpdateToTrue x:Key="ConvertUpdateToTrueKey"/>
+        <local:ConvertTrueToCollapsed x:Key="ConvertTrueToCollapsedKey"/>
+        <local:ConvertNullToCollapsed x:Key="ConvertNullToCollapsedKey"/>
+        <local:ConvertNullCallInProgressAndActiveToTrue x:Key="ConvertNullCallInProgressAndActiveToTrueKey"/>
+        <local:ConvertNullToFalse x:Key="ConvertNullToFalseKey"/>
+        <local:ConvertDeleteCallList x:Key="ConvertDeleteCallListKey"/>
+        <local:ConvertCancelCallList x:Key="ConvertCancelCallListKey"/>
+        <local:ConvertCallStatusEnumToOnScreenCallFilterStatusOptionsEnum x:Key="ConvertCallStatusEnumToOnScreenCallFilterStatusOptionsEnumKey"/>
+        <local:ConvertButtomTextSimulator x:Key="ConvertButtomTextSimulatorKey"/>
+        <local:ConvertColorPassword x:Key="ConvertColorPasswordKey"/>
+        <local:ConvertEmptyAddressToRedBackground x:Key="ConvertEmptyAddressToRedBackgroundKey"/>
+        <local:ConvertStatusColor x:Key="ConvertStatusColorKey"/>
+        
+        
+        
+        <!--Styles:-->
+
+        <!--Style for Button-->
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="David"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#3b3b3b"/>
+            <Setter Property="Foreground" Value ="White"/>
+            <Setter Property="Margin" Value="5,10,5,10"/>
+            <Setter Property="Width" Value="150"/>
+
+
+
+            <!-- Use Border to apply CornerRadius -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                To="LightSkyBlue" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                To="#3b3b3b" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="False">
+                    <!-- Change background and foreground when disabled -->
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <!-- Optional: Reduce opacity when disabled -->
+                    <Setter Property="Opacity" Value="0.5"/>
+                </DataTrigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <!-- Style for label -->
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="David"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <!-- Style for TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="David"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Background" Value="#e0e0e0"/>
+            <Setter Property="BorderBrush" Value="#BDBDBD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <!--background image-->
+        <Style x:Key="BackGroundPic" TargetType="Window">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Images/backgroundApp.png" Stretch="UniformToFill" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <BitmapImage x:Key="WindowIcon" UriSource="Images/HelpOnRoadBarLogo.png"/>
+    </Application.Resources>
+</Application>

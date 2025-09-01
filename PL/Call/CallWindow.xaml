@@ -1,0 +1,129 @@
+﻿<Window x:Class="PL.Call.CallWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Call"
+        mc:Ignorable="d"
+        Icon="{StaticResource WindowIcon}"
+        Style="{StaticResource BackGroundPic}"
+        Title="CallWindow" Height="500" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--title for the window-->
+        <Label Content="Call Details" 
+               Grid.ColumnSpan="2" HorizontalAlignment="Center"
+               FontSize="30" Foreground="CadetBlue"
+               />
+        <!-- ID  can not be changed-->
+        <Label Content="ID:" 
+                Grid.Row="1"
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <Label Content="{Binding CurrentCall.Id}" 
+             Grid.Row="1" Grid.Column="1" 
+             Margin="5,5,5,5" Grid.ColumnSpan="2" />
+
+        <!-- Call Type -->
+        <Label Content="Call Type:" 
+               Grid.Row="2"  
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <!--IsEnabled="{Binding CheckIfCanChange}"-->
+        <ComboBox Text="{Binding CurrentCall.CType}" 
+                  SelectedItem="{Binding CurrentCall.CType}"
+                  ItemsSource="{Binding Source={StaticResource CallTypeCollectionKey}}"
+             Grid.Row="2" Grid.Column="1" 
+             IsEnabled="{Binding canBeChanged}"
+             Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+
+        <!-- Description -->
+        <Label Content="Description:" 
+               Grid.Row="3"  
+               VerticalAlignment="Top" 
+               Margin="5,5,5,0"/>
+        <TextBox Text="{Binding CurrentCall.Description}" 
+             Grid.Row="3" Grid.Column="1" 
+             Margin="5,5,5,5"
+             IsEnabled="{Binding canBeChanged}"
+             Height="60" Grid.ColumnSpan="2"/>
+
+        <!-- Address -->
+        <Label Content="Full Address:" 
+               Grid.Row="4" 
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <TextBox Text="{Binding CurrentCall.FullAddress}" 
+             Background="{Binding CurrentCall.FullAddress, Converter={StaticResource ConvertEmptyAddressToRedBackgroundKey}}"
+             Grid.Row="4" Grid.Column="1" 
+             IsEnabled="{Binding canBeChanged}"
+             Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+
+        <!-- Opening Time can not be changed -->
+        <Label Content="Opening Time:" 
+               Grid.Row="5" 
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <Label Content="{Binding CurrentCall.Opening, StringFormat='{}{0:MM/dd/yyyy hh:mm tt}'}" 
+             Grid.Row="5" Grid.Column="1" 
+             Margin="5,5,5,5" Grid.ColumnSpan="2" />
+
+        <!-- Max Time -->
+        <Label Content="Max Time:" 
+               Grid.Row="6"
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <DatePicker SelectedDate="{Binding CurrentCall.MaxTime}" 
+                Grid.Row="6" Grid.Column="1" 
+                IsEnabled="{Binding maxTimeChange}"
+                Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+
+        <!-- Status can not be changed-->
+        <Label Content="Status:" 
+               Grid.Row="7" Grid.Column="0" 
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <Label Content="{Binding CurrentCall.Status}"
+              Grid.Row="7" Grid.Column="1" 
+              Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+
+        <!-- Assignments List -->
+        <Label Content="Assignments:" 
+               Grid.Row="8" Grid.Column="0" 
+               VerticalAlignment="Center" 
+               Margin="5,0,5,0"/>
+        <ListView ItemsSource="{Binding CurrentCall.CallAssignInList}" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2">
+            <ListView.View >
+                <GridView >
+                    <GridViewColumn DisplayMemberBinding="{Binding VolunteerId}" Header="Volunteer Id" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FullName}" Header="Full Name" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EnterTime, StringFormat='{}{0:MM/dd/yyyy hh:mm tt}'}" Header="Enter Time" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndTime, StringFormat='{}{0:MM/dd/yyyy hh:mm tt}'}" Header="End Time" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EType}" Header="Ending Type" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Update" 
+         Click="btnUpdate_Click"
+         Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="50" Width="100" />
+
+    </Grid>
+</Window>

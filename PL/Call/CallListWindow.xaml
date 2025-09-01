@@ -1,0 +1,104 @@
+﻿<Window x:Class="PL.Call.CallListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Call"
+        mc:Ignorable="d"
+        Title="Call List" Height="450" Width="850"
+        Icon="{StaticResource WindowIcon}"
+        Style="{StaticResource BackGroundPic}"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="281*"/>
+            <RowDefinition Height="297*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--Internal, Upper Grid-->
+        <Grid Height="auto" Grid.Row="0" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--filter By CallType-->
+            <Label Content="Filter By Call Type" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource CallTypeFilterOptionsWithoutNoCallTypeOptionCollectionKey}}" 
+                   SelectedValue="{Binding Path=currentCTypeFilterOption, Mode=TwoWay, Converter={StaticResource ConvertCallTypeEnumToCallTypeFilterOptionsWithoutNoCallTypeOptionEnumKey}}" 
+                   SelectionChanged="OnCallFilterOrStatusChanged" 
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch" Grid.Column="1"/>
+            
+            <!--filter By Call Status-->
+            <Label Content="Filter By Status:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource CallFilterByStatusKey}}" 
+               SelectedValue="{Binding Path=currentStatusFilterOption, Mode=TwoWay, Converter={StaticResource ConvertCallStatusEnumToOnScreenCallFilterStatusOptionsEnumKey}}" 
+               SelectionChanged="OnCallFilterOrStatusChanged" 
+               HorizontalAlignment="Stretch" 
+               VerticalAlignment="Stretch" Grid.Column="3"/>
+
+            <!--sort-->
+            <Label Content="Choose Sort By:" HorizontalAlignment="Center"  Grid.Column="4"/>
+            <ComboBox  ItemsSource="{Binding Source={StaticResource CallInListKey}}" 
+                   SelectedValue="{Binding Path=currentSortOption, Mode=TwoWay}" 
+                   SelectionChanged="OnCallFilterOrStatusChanged" 
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch" Grid.Column="5"/>
+        </Grid>
+
+        <!-- ListView with Call details -->
+        <ListView HorizontalAlignment="Left"  Grid.Row="1" ItemsSource="{Binding CallList}"  SelectedItem="{Binding SelectedCall}" MouseDoubleClick="ListView_MouseDoubleClick"  Grid.RowSpan="2">
+            
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="50"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CallId}" Header="Call Id" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CType}" Header="Call Type" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Opening, StringFormat={}{0:MM/dd/yyyy HH:mm}}" Header="Opening" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TimeLeft, StringFormat={}{0:hh\\:mm}}" Header="Time Left" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastVolunteer}" Header="Last Volunteer" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding HandlingTime, StringFormat={}{0:hh\\:mm}}" Header="Handling Time" Width="Auto"/>
+   
+                    <GridViewColumn Header="Call Status" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Status}" Foreground="{Binding Status, Converter={StaticResource ConvertStatusColorKey}}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalAssignments}" Header="Total Assignments" Width="Auto"/>
+
+                    <!-- Column for Deletion button -->
+                    <GridViewColumn Header="Delete" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="DeleteCallButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" 
+                                        Width="50"
+                                        Visibility="{Binding CallId, Converter={StaticResource ConvertDeleteCallListKey}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Cancel Assignment" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Cancel" Click="CancelButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"
+                                    Width="50"
+                                    Visibility="{Binding Status, Converter={StaticResource ConvertCancelCallListKey}}"
+                                    />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Add Call" Grid.Row="3" Click="btnAddNew_Click" HorizontalAlignment="Center" Height="50" Width="100"/>
+    </Grid>
+</Window>

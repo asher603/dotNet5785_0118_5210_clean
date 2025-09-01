@@ -1,0 +1,63 @@
+﻿<Window x:Class="PL.Volunteer.CallsHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Volunteer"
+        mc:Ignorable="d"
+        Title="CallsHistoryWindow"
+        Height="700" 
+        Width="1000"
+         Icon="{StaticResource WindowIcon}"
+        Style="{StaticResource BackGroundPic}"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Filter and Sort Section -->
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Filter Section -->
+            <StackPanel Grid.Column="0" Margin="5">
+                <Label Content="Filter By:" HorizontalAlignment="Left"/>
+                <ComboBox ItemsSource="{Binding Source={StaticResource CallTypeFilterOptionsWithoutNoCallTypeOptionCollectionKey}}"
+                            SelectedValue="{Binding Path=SelectedFilterOption, Mode=TwoWay, Converter={StaticResource ConvertCallTypeEnumToCallTypeFilterOptionsWithoutNoCallTypeOptionEnumKey}}" 
+                            SelectionChanged="OnClosedCallsListFilterOrSortOptionChanged" 
+                            HorizontalAlignment="Stretch"/>
+            </StackPanel>
+
+            <!-- Sort Section -->
+            <StackPanel Grid.Column="1" Margin="5">
+                <Label Content="Sort By:" HorizontalAlignment="Left"/>
+                <ComboBox ItemsSource="{Binding Source={StaticResource ClosedCallInListSortOptionsKey}}"
+                            SelectedValue="{Binding Path=SelectedSortOption, Mode=TwoWay}"  
+                            SelectionChanged="OnClosedCallsListFilterOrSortOptionChanged" 
+                            HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- ListView for Open Calls -->
+        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding ClosedCallsList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CType}" Header="Call Type" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FullAddress}" Header="Full Address" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Opening}" Header="Opening Time" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EnterTime}" Header="Call Assignment Time" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndTime}" Header="End Time" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EType}" Header="Ending Type" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

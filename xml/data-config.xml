@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <NextVolunteerId> 1000 </NextVolunteerId>
+  <NextCallId>1050</NextCallId>
+  <NextAssignmentId>1050</NextAssignmentId>
+  <NextAssignmentCallId>1050</NextAssignmentCallId>
+  <Clock>29/08/2025 00:14:58</Clock>
+  <RiskRange>13:12:00</RiskRange>
+  <MaxRange>41</MaxRange>
+</config>

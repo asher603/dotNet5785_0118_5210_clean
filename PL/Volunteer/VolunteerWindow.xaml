@@ -1,0 +1,177 @@
+﻿<Window x:Class="PL.Volunteer.VolunteerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Volunteer"
+        mc:Ignorable="d"
+        Title="Volunteer" Height="700" Width="1200"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+         Icon="{StaticResource WindowIcon}"
+        Style="{StaticResource BackGroundPic}"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+ 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <!--title for the window-->
+        <Label Content="Volunteer Details" 
+            Grid.ColumnSpan="2" HorizontalAlignment="Center"
+            FontSize="30" Foreground="CadetBlue"
+            />
+        
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Id:" Grid.Column="0" Grid.Row="0" FontFamily="David"/>
+            <Label Content="New Password:" Grid.Column="0" Grid.Row="1" FontFamily="David"/>
+            <Label Content="Full Name:" Grid.Column="0" Grid.Row="2" FontFamily="David"/>
+            <Label Content="Phone Number:" Grid.Column="0" Grid.Row="3" FontFamily="David"/>
+            <Label Content="Email:" Grid.Column="0" Grid.Row="4" FontFamily="David"/>
+            <Label Content="Full Address:" Grid.Column="0" Grid.Row="5" FontFamily="David"/>
+            <Label Content="Volunteer Role:" Grid.Column="0" Grid.Row="6" FontFamily="David"/>
+            <Label Content="Radius of Call Receiving Area:" Grid.Column="0" Grid.Row="7" FontFamily="David"/>
+            <Label Content="Distance Type:" Grid.Column="0" Grid.Row="8" FontFamily="David"/>
+            <Label Content="Active:" Grid.Column="0" Grid.Row="9" FontFamily="David"/>
+            <Label Content="Total Calls Handled:" Grid.Column="0" Grid.Row="10" FontFamily="David"/>
+            <Label Content="Total Calls Cancelled:" Grid.Column="0" Grid.Row="11" FontFamily="David"/>
+            <Label Content="Total Calls Expired:" Grid.Column="0" Grid.Row="12" FontFamily="David"/>
+
+            <TextBox Text="{Binding CurrentVolunteer.Id}" Grid.Column="1" Grid.Row="0" FontFamily="David" IsReadOnly="{Binding ButtonAddUpdText, Converter={StaticResource ConvertUpdateToTrueKey}}"/>
+            <TextBox Text="{Binding password, Mode=OneWayToSource}" 
+                     Foreground="{Binding password, Converter={StaticResource ConvertColorPasswordKey}}"
+                     MaxLength="10"
+                     Grid.Column="1" Grid.Row="1" FontFamily="David"/>
+            <TextBox Text="{Binding CurrentVolunteer.FullName, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" FontFamily="David"/>
+            <TextBox Text="{Binding CurrentVolunteer.PhoneNumber, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" FontFamily="David"/>
+            <TextBox Text="{Binding CurrentVolunteer.Email, Mode=TwoWay}" Grid.Column="1" Grid.Row="4" FontFamily="David"/>
+            <TextBox Text="{Binding CurrentVolunteer.FullAddress, Mode=TwoWay}" Background="{Binding CurrentVolunteer.FullAddress, Converter={StaticResource ConvertEmptyAddressToRedBackgroundKey}}" Grid.Column="1"  Grid.Row="5" FontFamily="David"/>
+            <ComboBox SelectedItem="{Binding CurrentVolunteer.VRole, Mode=TwoWay}" Text="{Binding CurrentVolunteer.VRole, Mode=OneWay}" ItemsSource="{Binding Source={StaticResource VRolKey}}"  Grid.Column="1" Grid.Row="6" IsEnabled="{Binding EnterAsManager}"/>
+            <TextBox Text="{Binding CurrentVolunteer.Distance, Mode=TwoWay}" Grid.Column="1" Grid.Row="7" FontFamily="David"/>
+            <Label Content="{Binding CurrentVolunteer.VDisType, Mode=TwoWay}" Grid.Column="1" Grid.Row="8"/>
+            <CheckBox IsChecked="{Binding CurrentVolunteer.Active, Mode=TwoWay}" Grid.Column="1" Grid.Row="9"/>
+            <Label Content="{Binding CurrentVolunteer.TotalCallsHandled, Mode=TwoWay}" Grid.Column="1" Grid.Row="10"/>
+            <Label Content="{Binding CurrentVolunteer.TotalCallsCancelled, Mode=TwoWay}" Grid.Column="1" Grid.Row="11"/>
+            <Label Content="{Binding CurrentVolunteer.TotalCallsExpired, Mode=TwoWay}" Grid.Column="1" Grid.Row="12"/>
+            <Button Content ="{Binding ButtonAddUpdText}" Click="btnAddUpdate_Click" Grid.Column="1" Grid.Row="13" Margin="10,10" Height="40" Width="80"/>
+
+            <Button Content="Generate Password" Click="btnGeneratePassword_Click" Grid.Row="1" Grid.Column="2"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column ="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Calls history" Click="btnCallsHistory_Click" Grid.Column="0" Grid.Row="0" Margin="10,10" Height="40" Width="100"/>
+
+            <Grid Grid.Row="0" Grid.Column ="1" Visibility="{Binding EnterAsManager, Converter={StaticResource ConvertTrueToCollapsedKey}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Choose call to handle" Click="btnChooseCall_Click" Grid.Column="0" Grid.Row="0" Margin="10,10" Height="40" Width="170" IsEnabled="{Binding CurrentVolunteer, Converter={StaticResource ConvertNullCallInProgressAndActiveToTrueKey}}"/>
+                <Button Content="Finished handling Call in progress" Click="btnFinishCall_Click" Grid.Column="1" Grid.Row="0" Margin="10,10" Height="40" Width="240" IsEnabled="{Binding CurrentVolunteer.CallInProgress, Converter={StaticResource ConvertNullToFalseKey}}"/>
+                <Button Content="Cancell Call in progress" Click="btnCancelledCall_Click" Grid.Column="2" Grid.Row="0" Margin="10,10" Height="40" Width="180" IsEnabled="{Binding CurrentVolunteer.CallInProgress, Converter={StaticResource ConvertNullToFalseKey}}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Visibility="{Binding CurrentVolunteer.CallInProgress, Converter={StaticResource ConvertNullToCollapsedKey}}" Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column ="1">
+                <Label Content="Call in progress details:" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <!-- Row Definitions -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Header row (for title) -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Header row (for column titles) -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Value row (for actual data) -->
+                </Grid.RowDefinitions>
+
+                <!-- Column Definitions -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Row 0 - Column Headers (bold labels) -->
+                <Label Content="Call ID" Grid.Row="0" Grid.Column="0" FontWeight="Bold"/>
+                <Label Content="Call Type" Grid.Row="0" Grid.Column="1" FontWeight="Bold"/>
+                <Label Content="Description" Grid.Row="0" Grid.Column="2" FontWeight="Bold"/>
+                <Label Content="Full Address" Grid.Row="0" Grid.Column="3" FontWeight="Bold"/>
+                <Label Content="Opening Date" Grid.Row="0" Grid.Column="4" FontWeight="Bold"/>
+                <Label Content="Max Time" Grid.Row="0" Grid.Column="5" FontWeight="Bold"/>
+                <Label Content="Enter Time" Grid.Row="0" Grid.Column="6" FontWeight="Bold"/>
+                <Label Content="Distance" Grid.Row="0" Grid.Column="7" FontWeight="Bold"/>
+                <Label Content="Call Status" Grid.Row="0" Grid.Column="8" FontWeight="Bold"/>
+
+                <!-- Row 1 - Values (textboxes for the actual data) -->
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.CallId}" Grid.Row="1" Grid.Column="0" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.CType}" Grid.Row="1" Grid.Column="1" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.Description}" Grid.Row="1" Grid.Column="2" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.FullAddress}" Grid.Row="1" Grid.Column="3" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.Opening}" Grid.Row="1" Grid.Column="4" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.MaxTime}" Grid.Row="1" Grid.Column="5" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.EnterTime}" Grid.Row="1" Grid.Column="6" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.Distance}" Grid.Row="1" Grid.Column="7" IsReadOnly="True"/>
+                <TextBox Text="{Binding CurrentVolunteer.CallInProgress.Status}" Grid.Row="1" Grid.Column="8" IsReadOnly="True"/>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Window>
